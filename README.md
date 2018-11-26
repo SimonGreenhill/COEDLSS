@@ -486,7 +486,7 @@ Run the AICM on your data:
 ``[ ] By how much?``
 
 
-The AICM is the simplest way to compare models at the moment, but the current gold standard (as of last month) is an approach called `Nested Sampling` but it needs more work and can take a bit of time to run. For publication you should run a Nested Sampling following this tutorial: <https://github.com/BEAST2-Dev/nested-sampling>
+The AICM is the simplest way to compare models at the moment, but the current gold standard is an approach called `Nested Sampling` but it needs more work and can take a bit of time to run. For publication you should run a Nested Sampling following this tutorial: <https://github.com/BEAST2-Dev/nested-sampling>
 
 
 # 6. Subgrouping of Polynesian Languages:
@@ -514,14 +514,12 @@ Our results from the best fitting model say this:
 
 ``[ ] Which hypothesis do we support?``
 
-TODO: CHECK AND UPDATE.
-
 ![Maximum Clade Credibility Tree](images/mcct.png) 
 
 ![Densitree](images/densi.png) 
 
 
-# Conclusions:
+# Wrapping up:
 
 I hope to have shown you how to:
 
@@ -532,13 +530,11 @@ I hope to have shown you how to:
 * make inferences about timing of Pacific settlement
 * make inferences about the subgrouping of these languages.
 
-# Discussion:
+Here we've applied these methods to reasonably messy set of languages -- lots of dialect chains and language contact. Do you think it worked? Was I too optimistic? When is it not appropriate to use these methods?
 
-1. here we've applied these methods to reasonably messy set of languages -- lots of dialect chains and language contact. Do you think it worked? Was I too optimistic? When is it not appropriate to use these methods?
+How could we make these methods better?
 
-2. how could we make these methods better?
-
-3. what about *your* data. Are there any questions that phylogenetic tools can help you answer? 
+What about *your* data. Are there any questions that phylogenetic tools can help you answer? 
 
 **More Resources:** The Taming the BEAST website is amazing (https://taming-the-beast.org/), and the BEAST2 blog is frequently updated with new mini-tutorials (http://www.beast2.org/). The canonical reference guide is the BEAST book (https://www.beast2.org/book/).
 
