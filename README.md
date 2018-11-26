@@ -170,7 +170,10 @@ You should see the dataset listed as something like "bin.cpacific" on the `Parti
 
 Select the `Site Model` Tab. Here we specify the "site model", i.e. the model that describes how the characters in our data will evolve.
 
-Using the `Babel` template for `BinaryCTMC` has set up a `CTMC` model for us.
+Using the `Babel` template for `BinaryCTMC` has set up a `CTMC` model for us, but we need to turn off the mutation rate. This is the relative rate of change between different partitions in the analysis. If we had, say, one model per word, then we'd need this. We don't so uncheck the "estimate" tickbox so it looks like this.
+
+``[ ] Mutation Rate is not being estimated.``
+
 
 ### Clock Model Tab.
 
