@@ -472,27 +472,7 @@ As a rule of thumb, the analysis with the smallest value for `posterior` (closer
 
 ``[ ] Which analysis is better?``
 
-But it's better if we use a formal model testing procedure to find which analysis is the best for these data. The easiest method at the moment is to calculate the `AICM` (Akaike Information Criteria through MCMC). The model with the _lowest_ AICM is better, and differences in AICM scores > 7 provide `strong evidence` of one model over the other (Burnham & Anderson '98).
-
-**Note** The AICM does not tell you that a model is *correct*, just that it is a better fit to the data. 
-
-To do this, in `Tracer` select `Analysis -> Model Comparison` from the file menu. Then make sure that `likelihood` and `aicm` are selected. 
-
-Calculating the AICM takes forever. If you were going to publish the results then you should make sure that `Bootstrap replicates` is set to 1000 so you get a good estimate. However, for our case we're going to set it to 5.
-
-Here's the results from an analysis I ran earlier a while ago on `Uto-Aztecan` languages. Note that the first analysis (ua-covarion-gamma-relaxed) has a lower AICM than the other one by 38.444 units. This is substantial support for the first analysis being a better fit to the data.
-
-![AICM](images/aicm.png) 
-
-Run the AICM on your data:
-
-``[ ] Which analysis is better?``
-
-``[ ] By how much?``
-
-
-The AICM is the simplest way to compare models at the moment, but the current gold standard is an approach called `Nested Sampling` but it needs more work and can take a bit of time to run. For publication you should run a Nested Sampling following this tutorial: <https://github.com/BEAST2-Dev/nested-sampling>
-
+But it's better if we use a formal model testing procedure to find which analysis is the best for these data. The current gold standard is an approach called `Nested Sampling` which will calculate a number for each analysis called the `marginal likelihood`. We can use the difference between these marginal likelihoods as the `Bayes Factor` (Kass & Raftery 1995). Bayes Factor differences greater than 2 indicate support for one model over the other. There is a tutorial online for this: <https://github.com/BEAST2-Dev/nested-sampling>
 
 # 6. Subgrouping of Polynesian Languages:
 
