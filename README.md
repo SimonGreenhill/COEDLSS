@@ -37,7 +37,7 @@ Remember that MP measures how well a tree explains the data by aiming to find th
 ``[ ] What is the best fitting – most parsimonious – tree?``
 
  
-Now that we know which tree is the best fitting, we can answer the following (focus only on the best tree, ignore the bad one): 
+Now that we know which tree is the best fitting, we can answer the following questions(focus only on the best tree, ignore the bad one): 
 
 ``[ ] What cognate sets innovated in Proto-Central Polynesian (i.e. the ancestor of Hawaiian & Maori).``
 
@@ -92,9 +92,9 @@ To read Neighbor Nets, look for the parallel lines as these represent the groupi
 
 3. A slightly more conflicting group is the _blue_ split that groups Fijian's Bau variety with Rotuman (a notorious example of language contact, Biggs 1965).
 
-4. There's a really big conflicting split for Tongan. You can see that the _yellow_ splits place it with Rotuman and Fijian, while the _pink_ split places Tongan with the Samoic-Outlier languages (e.g. Tikopia, East Uvea, East Futuna, Samoan). This might be an outcome of Tongan influencing the Samoic-Outlier languages during the Tongan Empire period <https://en.wikipedia.org/wiki/Tu%CA%BBi_Tonga_Empire>.
+4. There's a really big conflicting split for Tongan. You can see that the _yellow_ splits place it with Rotuman and Fijian, while the _pink_ split places Tongan with the Samoic-Outlier languages (e.g. Tikopia, East Uvea, East Futuna, Samoan). This might be an outcome of Tongan influencing the Samoic-Outlier languages during the Tongan Empire period (<https://en.wikipedia.org/wiki/Tu%CA%BBi_Tonga_Empire>).
 
-Overall this is quite a messy dataset, so it should be fun to see what we can do with trees.
+Overall this looks to be quite a messy dataset...
 
 ----
 
@@ -141,7 +141,7 @@ Today we want to install some templates in the `Babel` package that will help us
 
 ![Package](images/package.png) 
 
-Click _DONE_ and then you should see `Babel` in the add-ons list. Select it and click _Install/Upgrade_. This should work. 
+Click _DONE_ and then you should see `Babel` in the add-ons list. Select it and click _Install/Upgrade_.
 
 4\. Close BEAUTi and Restart it (to make sure the package contents are loaded).  
 
@@ -170,7 +170,7 @@ You should see the dataset listed as something like "bin.cpacific" on the `Parti
 
 Select the `Site Model` Tab. Here we specify the "site model", i.e. the model that describes how the characters in our data will evolve.
 
-Using the `Babel` template for `BinaryCTMC` has set up a `CTMC` model for us, but we need to turn off the mutation rate. This is the relative rate of change between different partitions in the analysis. If we had, say, one model per word, then we'd need this. We don't so uncheck the "estimate" tickbox so it looks like this.
+Using the `Babel` template for `BinaryCTMC` has set up a `CTMC` model for us, but we need to turn off the mutation rate. This is the relative rate of change between different partitions in the analysis. If we had, say, one model per word, then we'd need this. We don't, so un-tick the "estimate" tickbox so it looks like this:
 
 ``[ ] Mutation Rate is not being estimated.``
 
@@ -181,7 +181,7 @@ Select the `Clock Model` tab. This allows us to specify the clock model that des
 
 A. `Strict Clock`: There are no variations in rates across branches. 
 
-B. `Relaxed Clock (Log Normal)`. Variation across branches is autocorrelated, so that neighboring branches can be more similar than those further away (Drummond et al. '06). This allows different lineages to vary but that variation to get larger as languages get more different. Note that the Relaxed Clock can also be parameterised with an exponential distribution, but the Log Normal parameterisation is better (Drummond et al. '06).
+B. `Relaxed Clock (Log Normal)`. Variation across branches is autocorrelated, so that neighboring branches can be more similar than those further away (Drummond et al. '06). This allows different lineages to vary in a way that variation gets larger as languages get more different. Note that the Relaxed Clock can also be parameterised with an exponential distribution, but the Log Normal parameterisation is better (Drummond et al. '06).
 
 We'll keep it simple by using the strict clock today.
 
@@ -196,7 +196,7 @@ make strong or weak assumptions about pretty much anything in the analysis from 
 
 The Tree Prior describes the process that generates the tree. Here we should set it to a `Yule` process. This is a very simple "pure birth" process which starts with one lineage, waits for some amount of time then splits that lineage into two, and then repeats until we've got a tree (Yule '24). At any given time slice there's a constant probability of a lineage split at any time, and in every slice each lineage has an equal chance of splitting.
 
-The Yule is a simple general tree prior to use, unless you have extinct languages in your analysis. If this is the case then you will need to use something more complicated like the a `Birth-Death Skyline` or `Sampled Ancestor` (if you have extinct languages and their descendants (e.g. Latin + French, Italian). These are harder to run and stabilise however, so we will stick with the Yule for now.
+The Yule is a simple general tree prior to use, unless you have extinct languages in your analysis. If this is the case then you will need to use something more complicated like the a `Birth-Death Skyline` or `Sampled Ancestor` (if you have extinct languages and their descendants). These are harder to run and stabilise however, so we will stick with the Yule for now.
 
 ### Adding Calibrations:
 
@@ -267,9 +267,7 @@ Select the `MCMC` tab. This tab controls the analysis length and output files et
 
 ``[ ] Change the Chain Length to 1,000,000.``
 
-I want you to change the log file names to something sensible (it will make life easier later).
-
-Open the `tracelog` and `treelog` sections and change the `File Name` to something like "cpacific-ctmc-strict.log" or "cpacific-ctmc-strict.trees".
+Change the log file names to something sensible, it will make life easier later. Open the `tracelog` and `treelog` sections and change the `File Name` to something like "cpacific-ctmc-strict.log" or "cpacific-ctmc-strict.trees".
 
 ``[ ] Done.``
 
@@ -371,7 +369,7 @@ Your turn. Let's see how old we are estimating Central Pacific to be. The archae
 
 ``[ ] What's the mean age and 95% HPD of Central Pacific?``
 
-``[ ] Is this close to the age of around ~3200 B.P.``
+``[ ] Is this close to the age of around ~3200 B.P?``
 
 For variables you care about you should compare the results you get with results you'd get without any data. This is called a 'priors only' analysis and tells you what the assumptions in the model without the data are telling you. For example, if our both the real analysis and the priors-only analysis found an age of Central Pacific of 3200 years, then we would not be able to claim that we'd found this age as it has essentially been built in the model from the start. You want the data to tell you something *more* than your priors do. To do this, see the section on `Running a Priors-only analysis.` in the appendix.
 
@@ -508,20 +506,18 @@ Our results from the best fitting model say this:
 
 I hope to have shown you how to:
 
-* do some quality control checks on your data
-* visualise data and interpret a Neighbor-Net
-* set up a phylogenetic analysis to estimate some trees
-* process this analysis to check for stability.
-* make inferences about timing of Pacific settlement
+* do some quality control checks on your data,
+* visualise data and interpret a Neighbor-Net,
+* set up a phylogenetic analysis to estimate some trees,
+* process this analysis to check for stability,
+* make inferences about timing of Pacific settlement &
 * make inferences about the subgrouping of these languages.
 
-Here we've applied these methods to reasonably messy set of languages -- lots of dialect chains and language contact. Do you think it worked? Was I too optimistic? When is it not appropriate to use these methods?
-
-How could we make these methods better?
+Here we've applied these methods to a reasonably messy set of languages -- lots of dialect chains and language contact. Do you think it worked? Was I too optimistic? When is it not appropriate to use these methods? How could we make these methods better?
 
 What about *your* data. Are there any questions that phylogenetic tools can help you answer? 
 
-**More Resources:** The Taming the BEAST website is amazing (https://taming-the-beast.org/), and the BEAST2 blog is frequently updated with new mini-tutorials (http://www.beast2.org/). The canonical reference guide is the BEAST book (https://www.beast2.org/book/).
+**More Resources:** The Taming the BEAST website is amazing (https://taming-the-beast.org/), and the BEAST2 blog is frequently updated with new mini-tutorials (http://www.beast2.org/). The canonical reference guide is the BEAST book (https://www.beast2.org/book/). I've also put a few papers I wrote on these methods on github which might provide more details.
 
 
 # Appendix. Running a Priors-only analysis.
@@ -537,6 +533,8 @@ and change it to:
 ```xml
 <run id="mcmc" spec="MCMC" chainLength="10000000" sampleFromPrior='true'>
 ```
+
+If you're running beast from the command line you can just use the `-sampleFromPrior` flag to do this without having to edit anything.
 
 # Appendix. Ascertainment Correction.
 
