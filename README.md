@@ -183,7 +183,7 @@ A. `Strict Clock`: There are no variations in rates across branches.
 
 B. `Relaxed Clock (Log Normal)`. Variation across branches is autocorrelated, so that neighboring branches can be more similar than those further away (Drummond et al. '06). This allows different lineages to vary but that variation to get larger as languages get more different. Note that the Relaxed Clock can also be parameterised with an exponential distribution, but the Log Normal parameterisation is better (Drummond et al. '06).
 
-We have strong prior beliefs for choosing the `Relaxed Clock` as we know that languages vary in their rates of change. But, remember that we are setting up the simplest analysis and we want to test whether we need to "relax the clock" or not later. So, leave it as the Strict Clock for now.
+We'll keep it simple by using the strict clock today.
 
 ### Priors Tab.
 
@@ -244,7 +244,7 @@ Another good calibration is East Polynesian: it's a well-attested linguistic gro
     1025-1121 AD =  975-879 years ago (Wilsmhurst et al. '11)
     800-1000 AD  = 1200-1000 years ago (Spriggs '10)
 
-The average of these estimates is about 1000 years ago, and they're spread on both sides by about 150-200 years or so. This makes a great candidate for a `Normal` distribution. Create a new calibration, call it EastPolynesian. Give it a mean of 1000, and a standard deviation ('sigma') of 100.
+The average of these estimates is about 1000 years ago, and they're spread on both sides by about 150 years or so. This makes a great candidate for a `Normal` distribution. Create a new calibration, call it EastPolynesian. Give it a mean of 1000, and a standard deviation ('sigma') of 75.
     
 Add the following languages:
 
@@ -373,6 +373,8 @@ Your turn. Let's see how old we are estimating Central Pacific to be. The archae
 
 ``[ ] Is this close to the age of around ~3200 B.P.``
 
+For variables you care about you should compare the results you get with results you'd get without any data. This is called a 'priors only' analysis and tells you what the assumptions in the model without the data are telling you. For example, if our both the real analysis and the priors-only analysis found an age of Central Pacific of 3200 years, then we would not be able to claim that we'd found this age as it has essentially been built in the model from the start. You want the data to tell you something *more* than your priors do. To do this, see the section on `Running a Priors-only analysis.` in the appendix.
+
 
 # 4. View the Trees:
 
@@ -428,9 +430,9 @@ Go back to BEAUTi (remember that you left it running, right?) and change the clo
 
 Make sure you change the `tracelog` and `treelog` filenames on the `MCMC` tab to something like `cpacific-ctmc-relaxed.log` and `cpacific-ctmc-relaxed.trees`. 
 
-``[ ] Generate an XML for the relaxed clock analysis``
+``[ ] Generate an XML for the strict clock analysis``
 
-``[ ] Run the relaxed clock analysis``
+``[ ] Run the strict clock analysis``
 
 If you have time, you could try setting up a _covarion_ analysis. The Covarion is a nice model that allows each cognate in our data to switch 'on' and 'off' at different points on the tree (Penny et al. '01). It's often found to be the *best* fitting model for language data in my experience.
 
@@ -540,6 +542,21 @@ How could we make these methods better?
 What about *your* data. Are there any questions that phylogenetic tools can help you answer? 
 
 **More Resources:** The Taming the BEAST website is amazing (https://taming-the-beast.org/), and the BEAST2 blog is frequently updated with new mini-tutorials (http://www.beast2.org/). The canonical reference guide is the BEAST book (https://www.beast2.org/book/).
+
+
+# Appendix. Running a Priors-only analysis.
+
+It's good practice to run your analysis without any data to see whether your data is telling you something, or if you're just recovering the assumptions you've put in the analysis. BEAST makes this relatively easy to do. Either edit the XML file in a text editor, look for:
+
+```xml
+<run id="mcmc" spec="MCMC" chainLength="10000000">
+```
+
+and change it to:
+
+```xml
+<run id="mcmc" spec="MCMC" chainLength="10000000" sampleFromPrior='true'>
+```
 
 # Appendix. Ascertainment Correction.
 
