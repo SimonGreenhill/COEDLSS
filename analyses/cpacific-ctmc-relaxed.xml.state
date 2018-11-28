@@ -1,0 +1,29 @@
+<itsabeastystatewerein version='2.0' sample='50000000'>
+<statenode id='Tree.t:cpacific'>(((((0:351.888697520651,1:351.888697520651)28:1445.1944504813227,17:1797.0831480019738)33:195.1795218859138,(((((3:939.2218417314856,(7:760.2242113630077,15:760.2242113630077)26:178.99763036847787)27:116.93232699422276,10:1056.1541687257084)20:24.441176230770907,(6:830.0864358270281,8:830.0864358270281)25:250.50890912945113)21:43.01385671914386,(11:1005.0157001390348,(16:897.8035517813595,19:897.8035517813595)23:107.21214835767535)24:118.59350153658829)22:602.5129964054738,(((4:716.6809079366371,9:716.6809079366371)30:581.4542231602541,5:1298.1351310968912)34:291.27694130964665,12:1589.4120724065378)35:136.7101256745591)36:266.14047180679063)32:187.20037110797875,14:2179.4630409958663)29:609.6726442836662,((2:1469.355766818514,13:1469.355766818514)37:1054.5021986566076,18:2523.8579654751215)31:265.27771980441094)38:0.0</statenode>
+<statenode id='gamma_shape_s'>gamma_shape_s[1 1] (0.001,1000.0): 0.8899566276291421 </statenode>
+<statenode id='birthRate.t:cpacific'>birthRate.t:cpacific[1 1] (-Infinity,Infinity): 7.731199688773891E-4 </statenode>
+<statenode id='freqParameter.s:cpacific'>freqParameter.s:cpacific[2 1] (0.0,1.0): 0.9512829616358599 0.04871703836413397 </statenode>
+<statenode id='ucldMean.c:cpacific'>ucldMean.c:cpacific[1 1] (-Infinity,Infinity): 3.501665566314869E-5 </statenode>
+<statenode id='ucldStdev.c:cpacific'>ucldStdev.c:cpacific[1 1] (0.0,Infinity): 0.6433414740961894 </statenode>
+<statenode id='rateCategories.c:cpacific'>rateCategories.c:cpacific[38 1] (0,37): 28 19 36 21 17 11 5 10 24 3 31 8 4 35 2 30 33 4 1 6 1 22 20 8 27 13 37 30 0 1 22 19 12 3 8 14 11 33 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"gamma_shapeScaler.s:cpacific","p":0.5827819658163756,"accept":9093,"reject":34373,"acceptFC":9079,"rejectFC":34355,"rejectIv":0,"rejectOp":0},
+{"id":"YuleBirthRateScaler.t:cpacific","p":0.30932118993861696,"accept":535345,"reject":1635051,"acceptFC":534311,"rejectFC":1634614,"rejectIv":0,"rejectOp":0},
+{"id":"FrequenciesExchanger.s:cpacific","p":0.019839300746243578,"accept":7081,"reject":36574,"acceptFC":7069,"rejectFC":36560,"rejectIv":0,"rejectOp":0},
+{"id":"treeScaler.t:cpacific","p":0.8225550924046687,"accept":241130,"reject":1061819,"acceptFC":241087,"rejectFC":1060992,"rejectIv":395262,"rejectOp":0},
+{"id":"treeRootScaler.t:cpacific","p":0.5501539394610778,"accept":179637,"reject":1121382,"acceptFC":179541,"rejectFC":1120612,"rejectIv":304990,"rejectOp":304990},
+{"id":"UniformOperator.t:cpacific","p":"NaN","accept":3493270,"reject":9532598,"acceptFC":3491140,"rejectFC":9525909,"rejectIv":541477,"rejectOp":0},
+{"id":"SubtreeSlide.t:cpacific","p":91.22079745467006,"accept":3508043,"reject":3000581,"acceptFC":3507036,"rejectFC":2997246,"rejectIv":322230,"rejectOp":210502},
+{"id":"narrow.t:cpacific","p":"NaN","accept":741247,"reject":5768268,"acceptFC":740950,"rejectFC":5764173,"rejectIv":578511,"rejectOp":0},
+{"id":"wide.t:cpacific","p":"NaN","accept":6589,"reject":1294635,"acceptFC":6586,"rejectFC":1293732,"rejectIv":1043558,"rejectOp":667340},
+{"id":"WilsonBalding.t:cpacific","p":"NaN","accept":5400,"reject":1299183,"acceptFC":5396,"rejectFC":1298315,"rejectIv":819063,"rejectOp":238366},
+{"id":"ucldMeanScaler.c:cpacific","p":0.7548554222270363,"accept":200783,"reject":667606,"acceptFC":200745,"rejectFC":667058,"rejectIv":0,"rejectOp":0},
+{"id":"ucldStdevScaler.c:cpacific","p":0.7201627536889962,"accept":196387,"reject":1103831,"acceptFC":196292,"rejectFC":1103064,"rejectIv":0,"rejectOp":0},
+{"id":"CategoriesRandomWalk.c:cpacific","p":"NaN","accept":2288838,"reject":2048538,"acceptFC":2287170,"rejectFC":2047226,"rejectIv":1523544,"rejectOp":1523544},
+{"id":"CategoriesSwapOperator.c:cpacific","p":"NaN","accept":742456,"reject":3597060,"acceptFC":741745,"rejectFC":3594822,"rejectIv":0,"rejectOp":0},
+{"id":"CategoriesUniform.c:cpacific","p":"NaN","accept":1224153,"reject":3115951,"acceptFC":1222979,"rejectFC":3114098,"rejectIv":0,"rejectOp":0},
+{"id":"relaxedUpDownOperator.c:cpacific","p":0.7581309861296377,"accept":219602,"reject":1083497,"acceptFC":219297,"rejectFC":1082856,"rejectIv":602565,"rejectOp":0}
+]}
+-->
